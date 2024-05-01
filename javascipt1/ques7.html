@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h2 id="task7">Task 7: Calculate Grade</h2>
+<script>
+    function calculateGrade() {
+        let mark = parseFloat(prompt("Enter the mark to calculate the grade:"));
+
+        if (isNaN(mark)) {
+            document.write("Invalid input. Please enter a valid number.<br>");
+            return;
+        }
+
+        if (mark >= 90) {
+            document.write("Grade: A<br>");
+        } else if (mark >= 80) {
+            document.write("Grade: B<br>");
+        } else if (mark >= 70) {
+            document.write("Grade: C<br>");
+        } else if (mark >= 60) {
+            document.write("Grade: D<br>");
+        } else {
+            document.write("Grade: F<br>");
+        }
+    }
+    calculateGrade();
+</script>
+    </body>
+</html>

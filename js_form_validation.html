@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript</title>
+</head>
+<body>
+<!-- Use a loop to generate h1 elements -->
+<script>
+let a=[109,240,123,423,651,901];
+document.write("<h1>" + a + "</h1>");
+document.write("<h1>" + a.length + "</h1>");
+
+let t = "";
+for(let x in a) {
+    t += a[x] + "<br>";
+}
+document.write("<h1>" + t + "</h1>");
+
+t = "";
+for(let x of a) {
+    t += x + " ";
+}
+document.write("<h1>" + t + "</h1>");
+
+let a1=["Tom","Jerry","Mickey","Minnie","Oggy"];
+document.write("<h1>" + a1.join(" $ ") + "</h1>");
+document.write("<h1>" + a1.pop() + "</h1>");
+document.write("<h1>" + a1.push(" ", " ", " ") + "</h1>");
+document.write("<h1>" + a1.shift() + "</h1>");
+document.write("<h1>" + a1.unshift(" ") + "</h1>");
+document.write("<h1>" + a1.splice(2, 0, "Doll", "Teddy") + "</h1>");
+document.write("<h1>" + a1 + "</h1>");
+
+let b = a1.splice(2, 2, "Barbie", "Ken");
+document.write("<h1>" + b + "</h1>");
+
+let c = a.concat(a1, b);
+document.write("<h1>" + c + "</h1>");
+
+a.sort(function(a, b) {
+    return a - b;
+});
+document.write("<h1>" + a + "</h1>");
+
+let d = [1, 2, 3, 4, 5];
+let product = 1;
+d.forEach(myFun1);
+function myFun1(value) {
+    product *= value;
+}
+document.write("<h1>" + product + "</h1>");
+
+let f = [23, 10, 4, 78, 43, 25, 13, 25];
+let g = f.filter(myFun2);
+function myFun2(value) {
+    return value < 10;
+}
+document.write("<h1>" + g + "</h1>");
+
+let h = f.map(myFun3);
+function myFun3(value) {
+    return value + 10;
+}
+document.write("<h1>" + h + "</h1>");
+
+let e = [24, 25, 78, 534, 23, 98, 23];
+document.write("<h1>" + e.indexOf(" ") + "</h1>");
+document.write("<h1>" + e.lastIndexOf(" ") + "</h1>");
+document.write("<h1>" + e.includes("Bob") + "</h1>");
+
+let person = {
+    fname: "Nitish",
+    lname: "Kumar",
+    fullname: function() {
+        return this.fname + " " + this.lname;
+    }
+};
+document.write("<h1>" + person.fullname() + "</h1>");
+document.write("<h1>" + person.lname + "</h1>");
+</script>
+</body>
+</html>

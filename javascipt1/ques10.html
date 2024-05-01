@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <h2 id="task10">Task 10: Movie Schedule</h2>
+<script>
+    function chooseMovie() {
+        let day = prompt("Enter a day of the week:").toLowerCase();
+
+        switch (day) {
+            case "monday":
+                document.write("Watch Action Movie<br>");
+                break;
+            case "tuesday":
+                document.write("Watch Comedy Movie<br>");
+                break;
+            case "wednesday":
+                document.write("Watch Drama Movie<br>");
+                break;
+            case "thursday":
+                document.write("Watch Mystery Movie<br>");
+                break;
+            case "friday":
+                document.write("Watch Sci-Fi Movie<br>");
+                break;
+            case "saturday":
+                document.write("Watch Adventure Movie<br>");
+                break;
+            case "sunday":
+                document.write("Watch Family Movie<br>");
+                break;
+            default:
+                document.write("Invalid day<br>");
+        }
+    }
+    chooseMovie();
+</script>
+
+    </body>
+</html>

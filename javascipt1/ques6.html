@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h2 id="task6">Task 6: Prime Number</h2>
+<script>
+    function isPrimeNumber() {
+        let num = parseInt(prompt("Enter a number to check if it's prime:"));
+        let isPrime = true;
+
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        document.write(num + (isPrime ? " is" : " is not") + " a prime number.<br>");
+    }
+    isPrimeNumber();
+</script>
+    </body>
+</html>

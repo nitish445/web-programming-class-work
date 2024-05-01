@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Component</title>
+    <style>
+        input {
+            padding: 8px;
+            margin-right: 8px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputComponent">
+        <input type="text" id="userInput" placeholder="Enter your message">
+        <button id="showMessageBtn">Show Message</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userInput = document.getElementById('userInput');
+            const showMessageBtn = document.getElementById('showMessageBtn');
+            const messageDisplay = document.getElementById('message');
+
+            showMessageBtn.addEventListener('click', function() {
+                const inputValue = userInput.value;
+                messageDisplay.textContent = `You entered: ${inputValue}`;
+            });
+        });
+    </script>
+</body>
+</html>

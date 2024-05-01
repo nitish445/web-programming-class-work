@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript String</title>
+</head>
+<body>
+    <h2>string manipulation</h2>
+    <h3>character presence check</h3>
+    <input type="text" id="string1" placeholder="enter string 1: "><br>
+    <input type="text" id="string2" placeholder="enter string 2: "><br>
+    <button onclick="FindChar()">Find the character</button>
+    <p id="Result1"></p>
+    
+    <h3>Number of vowels present in the strings</h3>
+    <input type="text" id="vowelString" placeholder="enter string: "><br>
+    <button onclick="FindVowels()">Count vowels</button>
+    <p id="Result2"></p>
+
+    <h3>Reverse words in the strings</h3>
+    <input type="text" id="ReverseString" placeholder="enter string: "><br>
+    <button onclick="ReverseString()">Reverse Words</button>
+    <p id="Result3"></p>
+    
+    <h3>character repetition in the strings</h3>
+    <input type="text" id="CharRepeat" placeholder="enter string: "><br>
+    <button onclick="CharRepeat()">Repetition</button>
+    <p id="Result4"></p>
+    
+    <h3>rearrange words in string</h3>
+    <input type="text" id="RearrangeString" placeholder="enter string: "><br>
+    <button onclick="RearrangeString()">rearrange</button>
+    <p id="Result5"></p>
+
+    <h3>anagram check </h3>
+    <input type="text" id="AnagramString1" placeholder="enter string 1: "><br>
+    <input type="text" id="AnagramString2" placeholder="enter string 2: "><br>
+    <button onclick="AnagramCheck()">anagram</button>
+    <p id="Result6"></p>
+    
+    <h3>Possible Combination of strings</h3>
+    <input type="text" id="PossibleCombChar" placeholder="enter string: "><br>
+    <button onclick="PossibleCombChar()">Repetition</button>
+    <p id="Result7"></p>
+
+    <h3>Mix Words</h3>
+    <input type="text" id="MixWord1" placeholder="enter string 1: "><br>
+    <input type="text" id="MixWord2" placeholder="enter string 2: "><br>
+    <button onclick="MixWord()">Mix words</button>
+    <p id="Result8"></p>
+
+    <h3>replace first character occurrence</h3>
+    <input type="text" id="ReplaceChar" placeholder="enter string: "><br>
+    <button onclick="ReplaceChar()">Replace</button>
+    <p id="Result9"></p>
+    
+    <h3>Add suffix</h3>
+    <input type="text" id="AddSuffix" placeholder="enter string: "><br>
+    <button onclick="AddSuffix()">Add Suffix</button>
+    <p id="Result10"></p>
+
+    <script>
+        function FindChar() {
+            let string1 = document.getElementById("string1").value;
+            let string2 = document.getElementById("string2").value;
+            let UniqueChar = [...new Set([...string1, ...string2])].join('');
+            document.getElementById("Result1").innerHTML = UniqueChar;
+        }
+        
+        function FindVowels() {
+            let strfv = document.getElementById("vowelString").value;
+            let vowels = strfv.match(/[aieouAEIOU]/gi);
+            let count = vowels ? vowels.length : 0;
+            document.getElementById("Result2").innerHTML = "Numbers of vowels " + count;
+        }
+        
+        function ReverseString() {
+            let strrs = document.getElementById("ReverseString").value;
+            let reversed = strrs.split(' ').reverse().join(' ');
+            document.getElementById("Result3").innerHTML = reversed;
+        }
+        
+        function CharRepeat() {
+            let strcr = document.getElementById("CharRepeat").value;
+            let charMap = {};
+            for(let char of strcr) {
+                charMap[char] = charMap[char] + 1 || 1;
+            }
+            let result = Object.entries(charMap).map(([char, count]) => `${char}${count}`).join(' ');
+            document.getElementById("Result4").innerHTML = result;
+        }
+        
+        function RearrangeString() {
+            let strrs = document.getElementById("RearrangeString").value;
+            let rearrange = strrs.split(' ').sort((a, b) => a.length - b.length).join(' ');
+            document.getElementById("Result5").innerHTML = rearrange;
+        }
+        
+        function AnagramCheck() {
+            let str1 = document.getElementById("AnagramString1").value;
+            let str2 = document.getElementById("AnagramString2").value;
+            let sort1 = str1.split('').sort().join('');
+            let sort2 = str2.split('').sort().join('');
+            let result = sort1 === sort2 ? "they are anagrams to each other." : "they are not anagrams to each other.";
+            document.getElementById("Result6").innerHTML = result;
+        }
+        
+        function PossibleCombChar() {
+            let strpc = document.getElementById("PossibleCombChar").value;
+            let result = [];
+            function backtrack(substring, remain) {
+                if(substring.length === strpc.length) {
+                    result.push(substring);
+                    return;
+                }
+                for(let i = 0; i < remain.length; i++) {
+                    backtrack(substring + remain[i], remain.slice(0, i) + remain.slice(i + 1));
+                }
+            }
+            backtrack('', strpc);
+            document.getElementById("Result7").innerHTML = result;
+        }
+        
+        function MixWord() {
+            let str4 = document.getElementById("MixWord1").value;
+            let str5 = document.getElementById("MixWord2").value;
+            let mixed = str4.slice(0, 2) + str5.slice(2) + ' ' + str4.slice(0, 2) + str5.slice(2);
+            document.getElementById("Result8").innerHTML = mixed;
+        }
+        
+        function ReplaceChar() {
+            let str6 = document.getElementById("ReplaceChar").value;
+            let firstchar = str6[0];
+            let replaced = firstchar + str6.slice(1).replace(new RegExp(firstchar, 'g'), '@');
+            document.getElementById("Result9").innerHTML = replaced;
+        }
+        
+        function AddSuffix() {
+            let str7 = document.getElementById("AddSuffix").value;
+            // Add your logic here for adding suffix
+            document.getElementById("Result10").innerHTML = str7; // Temporary placeholder
+        }
+    </script>
+</body>
+</html>

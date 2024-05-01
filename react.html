@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Component</title>
+    <style>
+        /* Styles for the form */
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="formContainer">
+        <form id="myForm">
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" />
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" />
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('myForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                console.log(`First Name: ${firstName}`);
+                console.log(`Last Name: ${lastName}`);
+                console.log(`Email: ${email}`);
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

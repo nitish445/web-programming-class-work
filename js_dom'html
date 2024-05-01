@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <style>
+            #h1{
+                position: fixed;
+                top:10px;
+                right:0px;
+            }
+            #b1{
+                position: fixed;
+                bottom:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="h1">h1</h1>
+        
+        <div id="d2"></div>
+        <h1 id="h2"></h1>
+        <h1 id="h3"></h1>
+        <button id="b1">add text button</button>
+        <button id="b2">multpily</button>
+        <button id="b3">start timer</button>
+        
+        <script>
+            function date()
+            {
+                let d=new Date();
+                
+                document.getElementById("h1").innerHTML= d.toLocaleTimeString();
+            }
+            setInterval(date, 1000);
+            
+            let a = document.createElement("a");
+            a.href= "https//www.vit.ac.in";
+            a.id="a1";
+            
+            let b = document.createTextNode("VIT HOME PAGE");
+            a.appendChild(b);
+            document.getElementsByTagName("body")[0].appendChild(a);
+            
+            let c = document.getElementById("a1");
+            c.style.backgroundColor = "red";
+            c.style.color= "white";
+            
+            
+            let e = document.createElement("div");
+            e.id="d1";
+            e.style.height="200px";
+            e.style.width="200px";
+            e.style.backgroundColor= "green";
+            e.style.margin="20px";
+            e.style.border="2px solid black";
+            
+            document.getElementsByTagName("body")[0].appendChild(e);
+            let f = document.getElementById("d1");
+            
+            function onMouseChange()
+            {
+                f.style.height = "300px";
+                f.style.width = "300px";
+            }
+            
+            function outMouseChange(){
+                f.style.height="200px";
+                f.style.width="200px";
+            }
+            
+            f.addEventListener("mouseover", onMouseChange);
+            f.addEventListener("mouseout", outMouseChange);
+            
+            
+            let g = document.getElementById("b1");
+            function addTextbox(){
+                let t1=document.createElement("input");
+                let t2= document.createElement("input");
+                
+                t1.type="numer";
+                t2.type="number";
+                t1.id="t1";
+                t2.id="t2";
+                let t3= document.getElementById("d2");
+                t3.appendChild(t1);
+                t3.appendChild(t2);
+
+            }
+            g.addEventListener("click", addTextbox);
+            
+            
+            function multiply()
+            {
+                let x= document.getElementById("t1").value;
+                let y= document.getElementById("t2").value;
+                document.getElementById("h2").innerHTML = x*y;
+            }
+            
+            let b2= document.getElementById("b2");
+            b2.addEventListener("click", multiply);
+            
+            
+            let timer=300;
+            let x1=document.getElementById("h3");
+            function countDown(){
+                
+                let s= setInterval(function(){
+                minutes = Math.floor(timer/60);
+                seconds = timer%60;
+                x1.innerHTML= minutes+ ":" +seconds;
+                
+                if(--timer<0)
+                {
+                    x1.innerHTML = "Timer Over";
+                    clearInterval(s);
+                    
+                }
+            },1000);
+            }
+            let b3=document.getElementById("b3");
+            b3.addEventListener("click", countDown);
+
+
+        </script>
+    </body>
+</html>

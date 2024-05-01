@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1 id="H1"></h1>
+    <h1 id="H2"></h1>
+    <h1 id="H3"></h1>
+    <h1 id="H4"></h1>
+    <h1 id="H5"></h1>
+    <h1 id="H6"></h1>
+    <h1 id="H7"></h1>
+    <h1 id="H8"></h1>
+    <h1 id="H9"></h1>
+    <h1 id="H10"></h1>
+    <h1 id="H11"></h1>
+    <h1 id="H12"></h1>
+    <h1 id="H13"></h1>
+    <h1 id="H14"></h1>
+    <h1 id="H15"></h1>
+    <h1 id="H16"></h1>
+    <h1 id="H17"></h1>
+    <h1 id="H18"></h1>
+    <h1 id="H19"></h1>
+    <h1 id="H20"></h1>
+    <h1 id="H21"></h1>
+    <h1 id="H22"></h1>
+    <h1 id="H23"></h1>
+    <h1 id="H24"></h1>
+    <h1 id="H25"></h1>
+    <h1 id="H26"></h1>
+    <h1 id="H27"></h1>
+    <h1 id="H28"></h1>
+    <h1 id="H29"></h1>
+    <h1 id="H30"></h1>
+    <h1 id="H31"></h1>
+    <h1 id="H32"></h1>
+    <h1 id="H33"></h1>
+    <h1 id="H34"></h1>
+    <h1 id="H35"></h1>
+    <h1 id="H36"></h1>
+    <h1 id="H37"></h1>
+    <h1 id="H38"></h1>
+    <h1 id="H39"></h1>
+    <h1 id="H40"></h1>
+
+    <script>
+        let A = [55, 67, 23, 91, 84, 61, 12, 20, 5, 100];
+        document.getElementById("H1").innerHTML = A;
+        document.getElementById("H2").innerHTML = A.length;
+        let S = [];
+        for (let i = 0; i < A.length; i++) {
+            S[i] = A[i] * A[i];
+        }
+        document.getElementById("H3").innerHTML = S;
+
+        let B = " Hello There!! ";
+        document.getElementById("H4").innerHTML = B;
+        B[0] = "M";
+        document.getElementById("H5").innerHTML = B;
+
+        let B1 = "Hello";
+        let C = "Hello Everyone, 'I am Anjali Singh.'";
+        let D = 'Hello Everyone, "I am Anjali Singh."';
+        let E = `Hello Everyone "I am Anjali Singh" ${B1}`;
+        document.getElementById("H6").innerHTML = D;
+
+        let t = B.charAt(2);
+        document.getElementById("H7").innerHTML = t;
+        t += " " + B.charCodeAt(2);
+        document.getElementById("H8").innerHTML = t;
+        t += " " + B.at(-4);
+        document.getElementById("H9").innerHTML = t;
+        t = " ";
+        t = B.slice(-10, -5);
+        document.getElementById("H10").innerHTML = t;
+        t += " " + B.substring(5, 10);
+        document.getElementById("H11").innerHTML = t;
+        t += " " + B.substr(4, 7);
+        document.getElementById("H12").innerHTML = t;
+
+        let Array = B.split("");
+        document.getElementById("H13").innerHTML = Array;
+        let Arr = B.split(" ");
+        document.getElementById("H14").innerHTML = Arr;
+        let Ar = B.trimStart();
+        document.getElementById("H15").innerHTML = Ar;
+        let Arra = B.trimEnd();
+        document.getElementById("H16").innerHTML = Arra;
+
+        let Z = B.padStart(19, "$");
+        document.getElementById("H17").innerHTML = Z;
+        let Y = B.padEnd(20, "*");
+        document.getElementById("H18").innerHTML = Y;
+        let X = B.repeat(4);
+        document.getElementById("H19").innerHTML = X;
+        let W = B.lastIndexOf("e");
+        document.getElementById("H20").innerHTML = W;
+
+        let U = B.replace("Hello", "Hii");
+        document.getElementById("H21").innerHTML = U;
+
+        let Array1 = "Very Very, Good Morning!!";
+        document.getElementById("H22").innerHTML = Array1;
+        let R = Array1.replaceAll("Very", "Muy");
+        document.getElementById("H23").innerHTML = R;
+        let Q = Array1.match("Very");
+        document.getElementById("H24").innerHTML = Q;
+
+        let Str1 = "The rain in spain mainly stays in Spain.";
+        document.getElementById("H25").innerHTML = Str1.match(/ain/);
+        let M1 = Str1.match(/ain/gi);
+        document.getElementById("H26").innerHTML = M1;
+        let M2 = Str1.search(/ain/);
+        document.getElementById("H27").innerHTML = M2;
+
+        let Str2 = "Reverse Me!!!";
+        document.getElementById("H28").innerHTML = Str2.split("").reverse().join(" ");
+        document.getElementById("H29").innerHTML = Str2.toUpperCase();
+
+        function myFun2(a1, a2) {
+            return a1 * a2;
+        }
+        document.getElementById("H30").innerHTML = myFun2(5, 100);
+
+        (function () {
+            let f1 = "My phone is already in silent mode.";
+            document.getElementById("H31").innerHTML = f1;
+        })();
+
+        const a1 = function (a1, a2) {
+            return a1 + a2;
+        };
+        document.getElementById("H32").innerHTML = a1(6, 7);
+
+        const Car = { make: "Toyota", model: "Inova", year: "2023" };
+        function myFun3(CarObject) {
+            CarObject.make = "Audi";
+        }
+        myFun3(Car);
+        document.getElementById("H33").innerHTML = Car.make;
+
+        function out(x) {
+            function inside(y) {
+                return x * y;
+            }
+            return inside;
+        }
+        let g = out(3);
+        document.getElementById("H34").innerHTML = g;
+        document.getElementById("H35").innerHTML = g(6);
+
+        const add = (function () {
+            let counter = 0;
+            return function () {
+                counter += 1;
+                return counter;
+            };
+        })();
+
+        /*document.getElementById("H36").innerHTML = add()+ " " add()+ " "+add();
+        const o= function(a,b){return a+b;};
+        const o1= (a,b)=>{return a*b};
+        document.getElementById("H37").innerHTML = o1(3,7);*/
+    </script>
+</body>
+</html>

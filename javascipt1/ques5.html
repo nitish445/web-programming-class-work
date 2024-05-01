@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h2 id="task5">Task 5: Palindrome</h2>
+<script>
+    function isPalindrome() {
+        let str = prompt("Enter a string to check if it's a palindrome:");
+        const reversedStr = str.split('').reverse().join('');
+        const result = str === reversedStr;
+        document.write(`"${str}" is${result ? '' : ' not'} a palindrome.<br>`);
+    }
+    isPalindrome();
+</script>
+    </body>
+</html>

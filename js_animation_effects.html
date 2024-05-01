@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Animations</title>
+        <style >
+            
+        body
+        {
+            padding:0;
+            margin:0;
+            background-color:black;
+            display:flex;
+            align-items:center;
+            width:100vw;
+            height:100vh;
+            overflow:hidden;
+            
+        }
+        hr
+        {
+            width:50px;
+            border-color:transparent;
+            border-right-color:lightgreen;
+            border-right-width:50px;
+            position:absolute;
+            bottom:100%;
+            transform-origin:180% 50%;
+            animation-name:rain;
+            animation-duration:1s;
+            animation-timing-function:linear;
+            animation-iteration-count:infinite;
+        }
+        @keyframes rain
+        {
+            from
+            {
+                transform: rotate(75deg) translateX(0px);
+            }
+            to
+            {
+                transform: rotate(90deg) translateX(calc(100vh+10px));
+            }
+        }
+        
+        </style>
+    </head>
+        <body>
+        <script>
+        let hr;
+        let counter=25;
+        for (let i=0;i<counter;i++)
+        {
+            hr = document.createElement("hr");
+            
+            hr.style.left=Math.floor(Math.random()* window.innerWidth)+"px";
+            hr.style.animationDuration =0.5 +Math.random()*0.6+"s";
+            hr.style.animationDelay = Math.random()* 5 +"s";
+            
+            document.body.appendChild(hr);
+        }
+        </script>
+        </body>
+</html>

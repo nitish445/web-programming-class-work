@@ -1,0 +1,64 @@
+<html>
+    <head>
+     
+        <title>JavaScript</title>
+        <style>
+            body{
+                font-family:Arial,sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script>
+        function C_Age()
+        {
+            let dob=prompt("Enter your date of birth: ");
+            let age= new Date().getFullYear()-new Date(dob).getFullYear();
+            document.getElementById("output").innerHTML="Your age is: "+ age +"years.";
+            //alert("Your age is: "+age+"years.");
+        }
+        function M_Operation()
+        {
+            let size=prompt("Enter the size of the matrix: ");
+            let matrix= [];
+            for (let i=0;i<size;i++)
+            {
+                matrix[i]=[];
+                for(let j=0;j<size;j++)
+                {
+                    matrix[i][j]=prompt("Enter the data of tha matrix(" + (i+1) + "," + (j+1) + "): ");
+                }
+            }
+            document.getElementById("Matrix_size").innerHTML="Size of the matrix: <br>"+size;
+            document.getElementById("MatrixOutput").innerHTML="Original Matrix: <br>"+matrixToString(matrix);
+            //console.log("original Matrix: ", matrix);
+            let transpose=matrix[0].map((col, i)=> matrix.map(row=>row[i]));
+            document.getElementById("TransposeOutput").innerHTML="Transpose Matrix: <br>"+matrixToString(transpose);
+            //console.log("Transpose of matrix: ", transpose);
+            function matrixToString(matrix)
+            {
+                return matrix.map(row=>row.join(" \t")).join(" <br> ");
+            }
+        }
+  
+        
+    </script>
+    <h1> Age calculator</h1>
+    <button onclick="C_Age()">Calculate Age</button><br />
+    
+    <div id="output"></div>
+    
+    <h1> Matrix Operation</h1>
+    <button onclick="M_Operation()">Matrix Operation</button><br />
+    <div id="Matrix_size"></div>
+    <div id="MatrixOutput"></div>
+    <div id="TransposeOutput"></div>
+        
+    
+    
+    
+        
+    </body>
+    
+</html>

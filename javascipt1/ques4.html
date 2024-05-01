@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h2 id="task4">Task 4: Fibonacci Sequence</h2>
+<script>
+    function generateFibonacciSequence() {
+        let limit = parseInt(prompt("Enter the limit for Fibonacci sequence:"));
+        let sequence = [0, 1];
+        for (let i = 2; sequence[i - 1] + sequence[i - 2] <= limit; i++) {
+            sequence.push(sequence[i - 1] + sequence[i - 2]);
+        }
+        document.write("Fibonacci Sequence: " + sequence.join(', ') + "<br>");
+    }
+    generateFibonacciSequence();
+</script>
+    </body>
+</html>

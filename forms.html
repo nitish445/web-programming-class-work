@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FORM</title>
+</head>
+<body>
+  <form method="post" action="action.js" autocomplete="on">
+    Name: <input type="text" name="name" id="name" autofocus size="100">
+    <br><br>
+    <label for="name">Name: </label><input type="text" name="name" id="name"> <!-- With label, we can edit color, font, and all these things -->
+    <br><br>
+    <input type="text" name="age" placeholder="enter your age"> <!-- To show text inside box only -->
+    <br><br>
+    <input type="text" name="place" value="vellore" readonly> <!-- Read-only option can't change -->
+    <br><br>
+    <input type="text" name="place" disabled> <!-- Disabled -->
+    <br><br>
+    <input type="text" name="place" required> <!-- Mandatory -->
+    <br><br>
+    <fieldset>
+      <legend>HTML field element</legend> <!-- Fieldset for grouping of elements -->
+      <br><br>
+      <h2>Radio button</h2> <!-- Radio button -->
+      <input type="radio" name="gender" value="m" checked>male
+      <input type="radio" name="gender" value="f">female
+      <input type="radio" name="gender" value="o">other
+      <br><br>
+      <h2>Checkbox</h2> <!-- Checkbox -->
+      <input type="checkbox" name="lang" value="Hindi" checked>Hindi
+      <input type="checkbox" name="lang" value="English">English
+      <input type="checkbox" name="lang" value="Tamil">Tamil
+      <br><br>
+      <h2>Dropdown</h2> <!-- Dropdown -->
+      <select name="country">
+        <optgroup label="Asia">
+          <option value="Ind">India</option>
+          <option value="chi">China</option>
+          <option value="nep">Nepal</option>
+        </optgroup>
+        <optgroup label="Europe">
+          <option value="Ind">England</option>
+          <option value="chi">France</option>
+          <option value="nep">Germany</option>
+        </optgroup>
+      </select>
+      <select name="country2">
+        <optgroup label="Asia">
+          <option value="Ind">India</option>
+          <option value="chi">China</option>
+          <option value="nep">Nepal</option>
+        </optgroup>
+      </select>
+      <select name="country3" multiple>
+        <optgroup label="Asia">
+          <option value="Ind">India</option>
+          <option value="chi">China</option>
+          <option value="nep">Nepal</option>
+        </optgroup>
+      </select>
+      <br><br>
+      <input type="password" name="pass" placeholder="Password"><br>
+      <button value="click" onclick="alert('hello')">click</button>
+      <input type="submit">
+      <input type="reset">
+      <input type="submit" value="goo!"> <!-- We can assign different name to submit by adding value -->
+    </fieldset>
+  </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 FORM ELEMENTS</title>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>HTML field element</legend>
+      <input type="color"><br><br>
+      <input type="date" min="2005-05-30" placeholder="date"><br><br>
+      <input type="datetime-local" placeholder="datetimelocal"><br><br>
+      <input type="email" placeholder="email" required><br><br>
+      <input type="month" placeholder="month"><br><br>
+      <input type="week"><br><br>
+      <input type="range" min="0" max="100" step="5"><br><br>
+      <input type="time"><br><br>
+      <input type="url" required><br><br>
+      <input type="url" accept="application/pdf"><br><br>
+      <input type="url" accept="image/*"><br><br>
+      <input type="url" accept="application/pdf, image/png"><br><br>
+      <input type="file" multiple><br><br>
+      <datalist id="browser">
+        <option value="Microsoft edge">
+        <option value="Firebox">
+        <option value="Chrome">
+      </datalist>
+      <input list="browser"><br><br>
+      <input type="image" src="location.png"><br><br> <!-- To act image as submit button -->
+      <input type="submit" value="go">
+    </fieldset>
+  </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 FORM ELEMENTS</title>
+</head>
+<body>
+  <fieldset>
+    <legend>HTML field element</legend>
+    <p><b>This is bold.</b> this is not</p>
+    <p><strong>I strongly oppose.</strong> I don't care</p>
+    <p><i>This is bold.</i> this is not <em>on time</em></p>
+    <p>Do <mark>not </mark>talk</p>
+    <p>I feel so <small>small</small></p>
+    <p>I feel so <big>big</big></p>
+    <p>from n <sub>1</sub> to n<sub>10</sub> add x<sup>2</sup></p>
+    <p>I love <del>red</del> white</p>
+    <blockquote>This is blockquote</blockquote>
+    <p>As said in Jurassic Park, <q>life always finds a way.</q> I don't care</p>
+    <p><abbr title="world health organisation">WHO</abbr> says covid is still there</p>
+    <br><br>
+  </fieldset>
+</body>
+</html>

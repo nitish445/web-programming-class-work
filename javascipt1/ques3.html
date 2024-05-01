@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<h2 id="task3">Task 3: Factorial</h2>
+<script>
+    function calculateFactorial() {
+        let n = parseInt(prompt("Enter a number to calculate its factorial:"));
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        document.write("Factorial of " + n + ": " + result + "<br>");
+    }
+    calculateFactorial();
+</script>
+</body>
+</html>
+
